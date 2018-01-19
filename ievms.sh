@@ -163,10 +163,10 @@ check_ext_pack() {
 
 # Download and install `unar` from Google Code.
 install_unar() {
-    local url="http://unarchiver.c3.cx/downloads/unar1.10.1.zip"
+    local url="https://theunarchiver.com/downloads/unarMac.zip"
     local archive=`basename "${url}"`
 
-    download "unar" "${url}" "${archive}" "d548661e4b6c33512074df81e39ed874"
+    download "unar" "${url}" "${archive}" "91796924b1b21ee586ed904b319bb447"
 
     unzip "${archive}" || fail "Failed to extract ${ievms_home}/${archive} to ${ievms_home}/, unzip command returned error code $?"
 
@@ -372,7 +372,7 @@ build_ievm() {
             ;;
         EDGE)
             prefix="MS"
-            suffix="_preview"
+            suffix=""
             version="Edge"
             os="Win10"
             unit="8"
@@ -389,7 +389,7 @@ build_ievm() {
     local url
     if [ "${os}" == "Win10" ]
     then
-        url="https://az792536.vo.msecnd.net/vms/VMBuild_20160802/VirtualBox/MSEdge/MSEdge.Win10_RS1.VirtualBox.zip"
+        url="https://az792536.vo.msecnd.net/vms/VMBuild_20171019/VirtualBox/aSEdge/MSEdge.Win10.VirtualBox.zip"
     else
         url="https://az412801.vo.msecnd.net/vhd/IEKitV1_Final/VirtualBox/OSX/${archive}"
     fi
@@ -401,7 +401,7 @@ build_ievm() {
         IE8_Win7.zip) md5="21b0aad3d66dac7f88635aa2318a3a55" ;;
         IE9_Win7.zip) md5="58d201fe7dc7e890ad645412264f2a2c" ;;
         IE10_Win8.zip) md5="cc4e2f4b195e1b1e24e2ce6c7a6f149c" ;;
-        MSEdge_Win10.zip) md5="467d8286cb8cbed90f0761c3566abdda" ;;
+        MSEdge_Win10.zip) md5="855e12de1ddc86a648ab7fe7c2ea8d4c" ;;
     esac
 
     log "Checking for existing OVA at ${ievms_home}/${ova}"
